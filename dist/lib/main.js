@@ -50,6 +50,7 @@ async function run() {
             pullRequests = await queries_1.getPullRequests(octokit, github.context);
         }
         catch (error) {
+            console.log(error);
             core.setFailed('getPullRequests request failed: ' + error);
         }
         // check if there are PRs with unknown mergeable status
